@@ -1,0 +1,16 @@
+model: gpt-4o
+temperature: 1.0
+suffix: GPT
+iteration: 1
+sample: 3
+max_iterations: 3000
+num_eval: 5
+capture_video: false
+use_wandb: false
+wandb_username: ''
+wandb_project: ''
+env:
+  task: Twip
+  env_name: twip
+  description: to balance a two wheeled inverted pendulum robot so that the pendulum
+    stays upright

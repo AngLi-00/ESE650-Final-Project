@@ -1,0 +1,13 @@
+[2024-05-14 14:31:42,766][root][INFO] - Workspace: /home/angli/Eureka/eureka/outputs/eureka/2024-05-14_14-31-42
+[2024-05-14 14:31:42,766][root][INFO] - Project Root: /home/angli/Eureka/eureka
+[2024-05-14 14:31:42,766][root][INFO] - Using LLM: gpt-4o
+[2024-05-14 14:31:42,766][root][INFO] - Task: Twip
+[2024-05-14 14:31:42,766][root][INFO] - Task description: to balance a two wheeled inverted pendulum robot so that the pendulum stays upright
+[2024-05-14 14:31:42,775][root][INFO] - Iteration 0: Generating 3 samples with gpt-4o
+[2024-05-14 14:31:52,345][root][INFO] - Iteration 0: Prompt Tokens: 806, Completion Tokens: 1974, Total Tokens: 2780
+[2024-05-14 14:31:52,345][root][INFO] - Iteration 0: Processing Code Run 0
+[2024-05-14 14:31:56,863][root][INFO] - Iteration 0: Code Run 0 execution error!
+[2024-05-14 14:31:56,863][root][INFO] - Iteration 0: Processing Code Run 1
+[2024-05-14 14:32:01,432][root][INFO] - Iteration 0: Code Run 1 execution error!
+[2024-05-14 14:32:01,432][root][INFO] - Iteration 0: Processing Code Run 2
+[2024-05-14 14:32:06,424][root][INFO] - Iteration 0: Code Run 2 successfully training!

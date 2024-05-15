@@ -1,0 +1,100 @@
+Importing module 'gym_38' (/home/angli/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /home/angli/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 2.0.0+cu117
+Device count 1
+/home/angli/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /home/angli/.cache/torch_extensions/py38_cu117 as PyTorch extensions root...
+Emitting ninja build file /home/angli/.cache/torch_extensions/py38_cu117/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module gymtorch...
+2024-05-14 17:04:07,004 - INFO - logger - logger initialized
+<unknown>:3: DeprecationWarning: invalid escape sequence \*
+Error: FBX library failed to load - importing FBX data will not succeed. Message: No module named 'fbx'
+FBX tools must be installed from https://help.autodesk.com/view/FBX/2020/ENU/?guid=FBX_Developer_Help_scripting_with_python_fbx_installing_python_fbx_html
+/home/angli/Eureka/eureka/../isaacgymenvs/isaacgymenvs/train.py:77: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_name="config", config_path="./cfg")
+/home/angli/.local/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/job_logging:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/home/angli/.local/lib/python3.8/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+/home/angli/miniconda3/envs/eureka/lib/python3.8/site-packages/torch/utils/tensorboard/__init__.py:4: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if not hasattr(tensorboard, "__version__") or LooseVersion(
+Setting seed: 42
+Network Directory: /home/angli/Eureka/eureka/outputs/eureka/2024-05-14_17-03-38/policy-2024-05-14_17-04-07/runs/TwipGPT-2024-05-14_17-04-07/nn
+Tensorboard Directory: /home/angli/Eureka/eureka/outputs/eureka/2024-05-14_17-03-38/policy-2024-05-14_17-04-07/runs/TwipGPT-2024-05-14_17-04-07/summaries
+Loaded pretrained model state dict from /home/angli/Eureka/isaacgymenvs/isaacgymenvs/checkpoints/Twip1.pth
+self.seed = 42
+Runner does not have attribute algo. Cannot load pretrained model.
+Started to train
+Error executing job with overrides: ['task=TwipGPT', 'wandb_activate=False', 'wandb_entity=', 'wandb_project=', 'headless=True', 'capture_video=False', 'force_render=False', 'max_iterations=3000']
+Traceback (most recent call last):
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/utils/rlgames_utils.py", line 116, in create_rlgpu_env
+    module = importlib.import_module(module_name)
+  File "/home/angli/miniconda3/envs/eureka/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/tasks/twipgpt.py", line 264, in <module>
+    def compute_reward(root_states: torch.Tensor, target_pos: torch.Tensor) -> Tuple[torch.Tensor, Dict[str, torch.Tensor]]:
+  File "/home/angli/miniconda3/envs/eureka/lib/python3.8/site-packages/torch/jit/_script.py", line 1341, in script
+    fn = torch._C._jit_script_compile(
+RuntimeError: 
+Unsupported operation: attempted to use multidimensional indexing on a non-tensor type:
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/tasks/twipgpt.py", line 271
+    x_d = quat_rotate_inverse(root_states[:, 3:7], root_states[:, 7:10])[:, 0]  # Distance in x direction
+    y_d = quat_rotate_inverse(root_states[:, 3:7], root_states[:, 7:10])[:, 1]  # Distance in y direction
+    pitch = get_euler_xyz(root_states[:, 3:7])[:, 1]  # Pitch angle
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    pitch_d = root_states[:, 11]  # Pitch velocity
+    yaw_d = root_states[:, 12]  # Yaw velocity
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/angli/Eureka/eureka/../isaacgymenvs/isaacgymenvs/train.py", line 232, in launch_rlg_hydra
+    statistics = runner.run({
+  File "/home/angli/Eureka/rl_games/rl_games/torch_runner.py", line 124, in run
+    self.run_train(args)
+  File "/home/angli/Eureka/rl_games/rl_games/torch_runner.py", line 98, in run_train
+    self.agent = self.algo_factory.create(self.algo_name, base_name='run', params=self.params)
+  File "/home/angli/Eureka/rl_games/rl_games/common/object_factory.py", line 15, in create
+    return builder(**kwargs)
+  File "/home/angli/Eureka/rl_games/rl_games/torch_runner.py", line 37, in <lambda>
+    self.algo_factory.register_builder('a2c_continuous', lambda **kwargs : a2c_continuous.A2CAgent(**kwargs))
+  File "/home/angli/Eureka/rl_games/rl_games/algos_torch/a2c_continuous.py", line 16, in __init__
+    a2c_common.ContinuousA2CBase.__init__(self, base_name, params)
+  File "/home/angli/Eureka/rl_games/rl_games/common/a2c_common.py", line 1076, in __init__
+    A2CBase.__init__(self, base_name, params)
+  File "/home/angli/Eureka/rl_games/rl_games/common/a2c_common.py", line 121, in __init__
+    self.vec_env = vecenv.create_vec_env(self.env_name, self.num_actors, **self.env_config)
+  File "/home/angli/Eureka/rl_games/rl_games/common/vecenv.py", line 222, in create_vec_env
+    return vecenv_config[vec_env_name](config_name, num_actors, **kwargs)
+  File "/home/angli/Eureka/eureka/../isaacgymenvs/isaacgymenvs/train.py", line 163, in <lambda>
+    vecenv.register('RLGPU', lambda config_name, num_actors, **kwargs: RLGPUEnv(config_name, num_actors, **kwargs))
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/utils/rlgames_utils.py", line 253, in __init__
+    self.env = env_configurations.configurations[config_name]['env_creator'](**kwargs)
+  File "/home/angli/Eureka/eureka/../isaacgymenvs/isaacgymenvs/train.py", line 147, in <lambda>
+    'env_creator': lambda **kwargs: create_isaacgym_env(**kwargs),
+  File "/home/angli/Eureka/eureka/../isaacgymenvs/isaacgymenvs/train.py", line 113, in create_isaacgym_env
+    envs = isaacgymenvs.make(
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/__init__.py", line 59, in make
+    return create_rlgpu_env()
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/utils/rlgames_utils.py", line 119, in create_rlgpu_env
+    task_caller = isaacgym_task_map[task_name]
+KeyError: 'TwipGPT'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

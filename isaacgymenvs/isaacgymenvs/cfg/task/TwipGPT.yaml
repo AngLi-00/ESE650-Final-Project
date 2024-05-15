@@ -1,0 +1,69 @@
+env:
+  asset:
+    assetFileName: urdf/twip.urdf
+    assetRoot: ../../assets
+  clipActions: 1
+  clipObservations: 5.0
+  enableCameraSensors: false
+  envSpacing: 2.0
+  env_name: twipGPT
+  maxEffort: 1
+  numEnvs: ${resolve_default:1024,${...num_envs}}
+  resetDist: 3.0
+name: TwipGPT
+physics_engine: ${..physics_engine}
+sim:
+  dt: 0.0166
+  gravity:
+  - 0.0
+  - 0.0
+  - -9.81
+  physx:
+    bounce_threshold_velocity: 0.2
+    contact_collection: 0
+    contact_offset: 0.02
+    default_buffer_size_multiplier: 2.0
+    max_depenetration_velocity: 100.0
+    max_gpu_contact_pairs: 1048576
+    num_position_iterations: 4
+    num_subscenes: ${....num_subscenes}
+    num_threads: ${....num_threads}
+    num_velocity_iterations: 0
+    rest_offset: 0.001
+    solver_type: ${....solver_type}
+    use_gpu: ${contains:"cuda",${....sim_device}}
+  substeps: 2
+  up_axis: z
+  use_gpu_pipeline: ${eq:${...pipeline},"gpu"}
+task:
+  randomization_params:
+    actions:
+      distribution: gaussian
+      operation: additive
+      range:
+      - -0.05
+      - 0.05
+      range_correlated:
+      - 0
+      - 0.015
+    actor_params:
+      body__32__:
+        rigid_body_properties:
+          mass:
+            distribution: uniform
+            operation: scaling
+            range:
+            - 1
+            - 1.5
+            setup_only: true
+    frequency: 720
+    observations:
+      distribution: gaussian
+      operation: additive
+      range:
+      - 0
+      - 0.002
+      range_correlated:
+      - 0
+      - 0.001
+  randomize: true

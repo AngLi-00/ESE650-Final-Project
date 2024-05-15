@@ -1,0 +1,98 @@
+Importing module 'gym_38' (/home/angli/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /home/angli/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 2.0.0+cu117
+Device count 1
+/home/angli/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /home/angli/.cache/torch_extensions/py38_cu117 as PyTorch extensions root...
+Emitting ninja build file /home/angli/.cache/torch_extensions/py38_cu117/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module gymtorch...
+2024-05-14 17:03:58,064 - INFO - logger - logger initialized
+<unknown>:3: DeprecationWarning: invalid escape sequence \*
+Error: FBX library failed to load - importing FBX data will not succeed. Message: No module named 'fbx'
+FBX tools must be installed from https://help.autodesk.com/view/FBX/2020/ENU/?guid=FBX_Developer_Help_scripting_with_python_fbx_installing_python_fbx_html
+/home/angli/Eureka/eureka/../isaacgymenvs/isaacgymenvs/train.py:77: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_name="config", config_path="./cfg")
+/home/angli/.local/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:415: UserWarning: In config: Invalid overriding of hydra/job_logging:
+Default list overrides requires 'override' keyword.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/defaults_list_override for more information.
+
+  deprecation_warning(msg)
+/home/angli/.local/lib/python3.8/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+/home/angli/miniconda3/envs/eureka/lib/python3.8/site-packages/torch/utils/tensorboard/__init__.py:4: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if not hasattr(tensorboard, "__version__") or LooseVersion(
+Setting seed: 42
+Network Directory: /home/angli/Eureka/eureka/outputs/eureka/2024-05-14_17-03-38/policy-2024-05-14_17-03-58/runs/TwipGPT-2024-05-14_17-03-58/nn
+Tensorboard Directory: /home/angli/Eureka/eureka/outputs/eureka/2024-05-14_17-03-38/policy-2024-05-14_17-03-58/runs/TwipGPT-2024-05-14_17-03-58/summaries
+Loaded pretrained model state dict from /home/angli/Eureka/isaacgymenvs/isaacgymenvs/checkpoints/Twip1.pth
+self.seed = 42
+Runner does not have attribute algo. Cannot load pretrained model.
+Started to train
+/home/angli/miniconda3/envs/eureka/lib/python3.8/site-packages/gym/spaces/box.py:84: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(f"Box bound precision lowered by casting to {self.dtype}")
+[Warning] [carb.gym.plugin] useGpu is set, forcing single scene (0 subscenes)
+Not connected to PVD
++++ Using GPU PhysX
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: enabled
+dof state tensor([[0., 0.],
+        [0., 0.],
+        [0., 0.],
+        ...,
+        [0., 0.],
+        [0., 0.],
+        [0., 0.]], device='cuda:0')
+get_euler_xyz(self.root_states[:, 3:7]) (tensor([0., 0., 0.,  ..., 0., 0., 0.], device='cuda:0'), tensor([0., 0., 0.,  ..., 0., 0., 0.], device='cuda:0'), tensor([0., 0., 0.,  ..., 0., 0., 0.], device='cuda:0'))
+self.root_states[:, 3:7] tensor([[0., 0., 0., 0.],
+        [0., 0., 0., 0.],
+        [0., 0., 0., 0.],
+        ...,
+        [0., 0., 0., 0.],
+        [0., 0., 0., 0.],
+        [0., 0., 0., 0.]], device='cuda:0')
+Box(-1.0, 1.0, (2,), float32) Box(-inf, inf, (5,), float32)
+current training device: cuda:0
+build mlp: 5
+RunningMeanStd:  (1,)
+RunningMeanStd:  (5,)
+/home/angli/Eureka/isaacgymenvs/isaacgymenvs/tasks/twipgpt.py:183: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  pitch = torch.tensor(temp_euler[1])
+/home/angli/Eureka/isaacgymenvs/isaacgymenvs/tasks/twipgpt.py:184: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  yaw = torch.tensor(temp_euler[2])
+/home/angli/Eureka/isaacgymenvs/isaacgymenvs/tasks/twipgpt.py:192: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  yaw = torch.tensor(temp_euler[2]) + torch_rand_float(-3, 3, (num_resets, 1), self.device).flatten() #randomized yaw
+Error executing job with overrides: ['task=TwipGPT', 'wandb_activate=False', 'wandb_entity=', 'wandb_project=', 'headless=True', 'capture_video=False', 'force_render=False', 'max_iterations=3000']
+Traceback (most recent call last):
+  File "/home/angli/Eureka/eureka/../isaacgymenvs/isaacgymenvs/train.py", line 232, in launch_rlg_hydra
+    statistics = runner.run({
+  File "/home/angli/Eureka/rl_games/rl_games/torch_runner.py", line 124, in run
+    self.run_train(args)
+  File "/home/angli/Eureka/rl_games/rl_games/torch_runner.py", line 101, in run_train
+    self.agent.train()
+  File "/home/angli/Eureka/rl_games/rl_games/common/a2c_common.py", line 1251, in train
+    step_time, play_time, update_time, sum_time, a_losses, c_losses, b_losses, entropies, kls, last_lr, lr_mul = self.train_epoch()
+  File "/home/angli/Eureka/rl_games/rl_games/common/a2c_common.py", line 1115, in train_epoch
+    batch_dict = self.play_steps()
+  File "/home/angli/Eureka/rl_games/rl_games/common/a2c_common.py", line 686, in play_steps
+    self.obs, rewards, self.dones, infos = self.env_step(res_dict['actions'])
+  File "/home/angli/Eureka/rl_games/rl_games/common/a2c_common.py", line 504, in env_step
+    obs, rewards, dones, infos = self.vec_env.step(actions)
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/utils/rlgames_utils.py", line 256, in step
+    return  self.env.step(actions)
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/tasks/base/vec_task.py", line 355, in step
+    self.post_physics_step()
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/tasks/twipgpt.py", line 234, in post_physics_step
+    self.compute_reward()
+  File "/home/angli/Eureka/isaacgymenvs/isaacgymenvs/tasks/twipgpt.py", line 129, in compute_reward
+    self.rew_buf[:], self.rew_dict = compute_reward(self.obs_buf, self.goal_pos)
+AttributeError: 'TwipGPT' object has no attribute 'goal_pos'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

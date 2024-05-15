@@ -1,0 +1,5 @@
+task: Twip
+env_name: twip
+description: to control the joints of the a two wheeled inverted pendulum robot to maintain its balance and move it to the target position while minimizing pitch and yaw oscillations
+# description: to balance a two wheeled inverted pendulum robot so that the pendulum stays upright
+# max_iterations: 1000
